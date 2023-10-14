@@ -15,9 +15,11 @@ const main = async () => {
 
     const content = Array.from(articles).slice(0, 5).map((article) => {
         const title = article.querySelector("h3").innerText;
-        const url = article.querySelector("a").href;
+        const link = article.querySelector("a");
+        const url = link.href;
+        const paragraph = link.querySelector("p").innerText;
 
-        return { title, url };
+        return { title, url, paragraph };
       });
 
     return content;
