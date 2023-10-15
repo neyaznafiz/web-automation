@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 
-const url = "https://www.joshwcomeau.com/";
+const url = "https://www.google.com/";
 
 const main = async () => {
   const browser = await puppeteer.launch({
