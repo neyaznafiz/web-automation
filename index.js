@@ -1,4 +1,3 @@
-import puppeteer from "puppeteer";
 import { joshWcomeau } from "./ScrapFile/joshWcomeau.js";
 import { overReacted } from "./ScrapFile/overReacted.js";
 
