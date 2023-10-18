@@ -1,9 +1,9 @@
-import { joshWcomeau } from "./ScrapFile/joshWcomeau.js";
-import { overReacted } from "./ScrapFile/overReacted.js";
+import { bikroy } from "./ScrapFile/bikroy.js";
+import { daraz } from "./ScrapFile/daraz.js";
 
 const main = async () => {
-  joshWcomeau()
-  overReacted()
+  await daraz();
+  await bikroy();
 };
 
 main();

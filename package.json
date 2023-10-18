@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "node index.js"
+    "scrap": "node index.js"
   },
   "dependencies": {
     "puppeteer": "^21.3.8"
