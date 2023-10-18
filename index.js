@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 
-const url = "https://www.google.com/";
+const url = "https://www.daraz.com.bd/";
 
 const main = async () => {
   const browser = await puppeteer.launch({
@@ -9,7 +9,7 @@ const main = async () => {
 });
   const page = await browser.newPage();
   await page.goto(url);
-  await page.screenshot({ path: "web-scraping.png" });
+  await page.screenshot({ path: "daraz.png" });
   await browser.close();
 };
 
