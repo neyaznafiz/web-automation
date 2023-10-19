@@ -6,7 +6,7 @@ const scraper = async (url) => {
     headless: false,
     defaultViewport: { width: 1480, height: 1080 },
     userDataDir: "temporary",
-    // slowMo: 250,
+    slowMo: 100,
     // ignoreDefaultArgs: ["--disable-extensions"],
   });
 
