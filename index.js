@@ -1,9 +1,9 @@
-import { bikroy } from "./ScrapFile/bikroy.js";
-import { daraz } from "./ScrapFile/daraz.js";
+import { web } from "./ScrapFile/web.js";
 
 const main = async () => {
-  await daraz();
-  await bikroy();
+  // await daraz();
+  // await bikroy();
+  await web();
 };
 
 main();

@@ -1,28 +1,34 @@
 import puppeteer from "puppeteer";
+import {setTimeout} from "timers/promises"
 
-const scraper = async (url, elements, contentElement) => {
+const scraper = async (url) => {
   const browser = await puppeteer.launch({
-    headless: "new",
-    ignoreDefaultArgs: ["--disable-extensions"],
+    headless: false,
+    defaultViewport: { width: 1480, height: 1080 },
+    userDataDir: "temporary",
+    // slowMo: 100,
+    // ignoreDefaultArgs: ["--disable-extensions"],
   });
+
   const page = await browser.newPage();
-  await page.goto(url);
+  await page.goto(url, {
+    waitUntil: "networkidle2",
+    timeout: 60000,
+  });
 
-  const allCategories = await page.evaluate((allElementSelector, contentSelector) => {
-      const categories = document.querySelectorAll(allElementSelector);
-      const content = Array.from(categories).map((category) => {
-        const result = category.querySelector(contentSelector).innerText;
+  let selector = "img[alt='guest']";
+  await page.screenshot({ path: "devconf.png" });
 
-        return { result };
-      });
+  const guestElement = await page.waitForSelector(selector);
 
-      return content;
-    },
-    elements,
-    contentElement
-  );
+  await guestElement.scrollIntoView()
+  await setTimeout(1000)
 
-  console.log(allCategories);
+  await guestElement.click(selector);
+  await setTimeout(1000)
+
+  await page.screenshot({ path: "guest.png" })
+
   await browser.close();
 };
 
