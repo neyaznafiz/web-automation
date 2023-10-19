@@ -1,4 +1,5 @@
 import puppeteer from "puppeteer";
+import { autoScroll } from "./autoScroll.js";
 import {setTimeout} from "timers/promises"
 
 const scraper = async (url) => {
@@ -16,16 +17,6 @@ const scraper = async (url) => {
     timeout: 60000,
   });
 
-
-  // await page.screenshot({ path: "devconf.png" });
-
-  
-  // await guestElement.scrollIntoView()
-  // await setTimeout(1000)
-  
-  // await page.click('[title="Search"][type="search"]');
-  // await page.waitForSelector(inputSelector)
-  
   await page.waitForSelector('#searchbox_input');
   await page.type('#searchbox_input', "neyaz nafiz")
 
@@ -35,9 +26,15 @@ const scraper = async (url) => {
   await setTimeout(2000)
   
   await page.click('[href="https://dev.to/neyaznafiz/--3lb0"]')
-
   await setTimeout(2000)
+
+  // await page.waitForSelector('#reaction-drawer-trigger')
+  // await page.click("#reaction-drawer-trigger")
+  await setTimeout(2000)
+
   await page.screenshot({ path: "neyaz-blog.png" })
+
+  await autoScroll(page)
   
   await setTimeout(4000)
 
@@ -45,3 +42,4 @@ const scraper = async (url) => {
 };
 
 export { scraper };
+
