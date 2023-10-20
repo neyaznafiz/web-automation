@@ -1,9 +1,10 @@
-import { joshWcomeau } from "./ScrapFile/joshWcomeau.js";
-import { overReacted } from "./ScrapFile/overReacted.js";
+import { web } from "./ScrapFile/web.js";
+import dotenv from "dotenv/config"
 
 const main = async () => {
-  joshWcomeau()
-  overReacted()
+  // await daraz();
+  // await bikroy();
+  await web();
 };
 
 main();
