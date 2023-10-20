@@ -1,7 +1,11 @@
 import dotenv from "dotenv/config";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-extra";
 import { autoScroll } from "./autoScroll.js";
 import { setTimeout } from "timers/promises";
+import StealthPlugin from "puppeteer-extra-plugin-stealth"
+import { executablePath } from "puppeteer";
+
+puppeteer.use(StealthPlugin())
 
 const scraper = async (url) => {
   const browser = await puppeteer.launch({
@@ -9,6 +13,7 @@ const scraper = async (url) => {
     // defaultViewport: { width: 1480, height: 1080 },
     userDataDir: "temporary",
     slowMo: 100,
+    executablePath: executablePath()
   });
 
   const page = await browser.newPage();
@@ -28,13 +33,14 @@ const scraper = async (url) => {
 
   await page?.waitForSelector(".js-sign-in-button");
   await page?.click(".js-sign-in-button");
-
+  
+  await setTimeout(5000);
   await autoScroll(page);
   
   await page.waitForSelector('[href="/logout"]');
   await page.click('[href="/logout"]');
 
-  await setTimeout(2000);
+  await setTimeout(4000);
 
   await browser.close();
 };
