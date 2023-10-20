@@ -9,7 +9,6 @@ const scraper = async (url) => {
     defaultViewport: { width: 1480, height: 1080 },
     userDataDir: "temporary",
     slowMo: 100,
-    // ignoreDefaultArgs: ["--disable-extensions"],
   });
 
   const page = await browser.newPage();

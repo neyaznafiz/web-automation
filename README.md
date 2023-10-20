@@ -2,7 +2,7 @@
 
 - clone this reposotiry.
 - create a `.env` file.
-- Set your GitHub `username/email` and `password`
+- Set your GitHub `username/email` and `password` <br>
   Example
   ```
   .env
