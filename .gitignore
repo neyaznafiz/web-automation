@@ -1,4 +1,5 @@
 .env
 yarn.lock
-node_modules
 temporary
+node_modules
+package-lock.json
