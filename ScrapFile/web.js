@@ -1,6 +1,6 @@
 import { scraper } from "./scraper.js";
 
-const url = "https://duckduckgo.com/";
+const url = "https://github.com/";
 
 const web = async () => {
   await scraper(url);
