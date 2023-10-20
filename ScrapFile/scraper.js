@@ -6,7 +6,7 @@ import { setTimeout } from "timers/promises";
 const scraper = async (url) => {
   const browser = await puppeteer.launch({
     headless: false,
-    defaultViewport: { width: 1480, height: 1080 },
+    // defaultViewport: { width: 1480, height: 1080 },
     userDataDir: "temporary",
     slowMo: 100,
   });
