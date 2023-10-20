@@ -13,4 +13,4 @@
   PASS="Your GitHub password"
   ```
 
-- Open the terminal in this file path and run `yarn scrap` or 'npm scrap'
+- Open the terminal in this file path and run `yarn scrap` or `npm run scrap`
