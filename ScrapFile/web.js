@@ -1,10 +1,10 @@
 import { scraper } from "./scraper.js";
 
-const url = "https://github.com/";
-// const url = "https://bot.sannysoft.com/";
+const url = "https://www.google.com/";
+const searchContent = "neyaz nafiz"
 
 const web = async () => {
-  await scraper(url);
+  await scraper(url, searchContent);
 };
 
 export { web };

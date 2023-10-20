@@ -7,12 +7,11 @@ import { executablePath } from "puppeteer";
 
 puppeteer.use(StealthPlugin())
 
-const scraper = async (url) => {
+const scraper = async (url, searchContent) => {
   const browser = await puppeteer.launch({
     headless: false,
-    defaultViewport: { width: 1480, height: 1080 },
+    slowMo: 50,
     userDataDir: "temporary",
-    slowMo: 100,
     executablePath: executablePath()
   });
 
@@ -22,23 +21,20 @@ const scraper = async (url) => {
     timeout: 30000,
   });
 
-  await page?.waitForSelector('[href="/login"]');
-  await page?.click('[href="/login"]');
+  await page.keyboard.press('Enter');
 
-  await page?.waitForSelector("#login_field");
-  await page?.type("#login_field", process.env.NAME);
+  await page.waitForSelector('.gLFyf');
+  await page.type('.gLFyf', searchContent);
 
-  await page?.waitForSelector("#password");
-  await page?.type("#password", process.env.PASS);
+  await page.keyboard.press('Enter');
 
-  await page?.waitForSelector(".js-sign-in-button");
-  await page?.click(".js-sign-in-button");
+  await page.waitForNavigation();
   
-  await setTimeout(5000);
-  await autoScroll(page);
-  
-  await page.waitForSelector('[href="/logout"]');
-  await page.click('[href="/logout"]');
+  await page.waitForSelector(".yuRUbf a")
+  await page.click(".yuRUbf a")
+
+  await setTimeout(2000);
+  await autoScroll(page)
 
   await setTimeout(4000);
 
