@@ -3,7 +3,7 @@
 - clone this reposotiry.
 - Install `yarn` or `npm`
 - create a `.env` file.
-- Set your GitHub `username/email` and `password` <be>
+- Set your GitHub `username/email` and `password` in `.snv` file <be>
 
   Example:
   ```
