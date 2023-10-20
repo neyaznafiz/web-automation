@@ -16,4 +16,10 @@
 
 - Open the terminal in this file path and run `yarn scrap` or `npm run scrap`
 
-NOTE: FOR MORE THINGS, YOU CAN CHECK OUT OTHERS BRANCH IN THIS REPOSITORY.
+</br>
+
+<div align="center">
+
+  **NOTE: FOR MORE THINGS, YOU CAN CHECK OUT OTHERS BRANCH IN THIS REPOSITORY.**
+
+</div>
