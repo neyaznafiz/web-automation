@@ -1,9 +1,11 @@
 # Automate GitHub Log In
 
 - clone this reposotiry.
+- Install `yarn` or `npm`
 - create a `.env` file.
-- Set your GitHub `username/email` and `password` <br>
-  Example
+- Set your GitHub `username/email` and `password` in `.snv` file <be>
+
+  Example:
   ```
   .env
   ----------
@@ -12,4 +14,4 @@
   PASS="Your GitHub password"
   ```
 
-  - Open the terminal in this file path and run `yarn scrap` or 'npm scrap'
+- Open the terminal in this file path and run `yarn scrap` or `npm run scrap`
