@@ -15,4 +15,5 @@
   ```
 
 - Open the terminal in this file path and run `yarn scrap` or `npm run scrap`
->>>>>>> 370edcabec094240a74018f7e44b31c090ebb38e
+
+NOTE: FOR MORE THINGS, YOU CAN CHECK OUT OTHERS BRANCH IN THIS REPOSITORY.
